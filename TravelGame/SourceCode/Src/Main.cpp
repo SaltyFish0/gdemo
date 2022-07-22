@@ -40,6 +40,7 @@ int PASCAL WinMain(HINSTANCE hInstance,
 
 	// To do : 在此使用API更改窗口标题
 	dSetWindowTitle("Lesson");
+	dPlaySound("../resources/music.wav", 1, 1);
 
 	// 引擎主循环，处理屏幕图像刷新等工作
 	while( dEngineMainLoop() )
@@ -49,9 +50,11 @@ int PASCAL WinMain(HINSTANCE hInstance,
 		// 执行游戏主循环
 		GameMainLoop( fTimeDelta );
         float a = dGetSpritePositionX("role");
-        if(a > 46)
+        if(a > 1)
         {
-          dLoadMap("untitled.t2d");
+          //dLoadMap("untitled.t2d");
+          dSetSpriteFlipX("role", 1);
+          dSetSpriteLinearVelocity("role", -20, 0);
         }
 	};
 
@@ -83,6 +86,7 @@ void dOnMouseClick( const int iMouseType, const float fMouseX, const float fMous
     {
         dSetSpriteLinearVelocity("role",20,0);
         float a = dGetSpritePositionX("role");
+        dSetSpriteFlipX("role", 0);
         printf("ff=%lf=\n",a);
         printf("Hello World!\n");
 
