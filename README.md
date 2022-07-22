@@ -1,3 +1,2 @@
 # gdemo
-Created on July 22
-Ykkk
+SaltyFish and YKK were founded on July 22
