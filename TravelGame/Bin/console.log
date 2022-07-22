@@ -1,4 +1,4 @@
-//-------------------------- 7/22/2022 -- 16:43:39 -----
+//-------------------------- 7/22/2022 -- 21:26:26 -----
 Processor Init:
    Intel (unknown, Pentium Pro/II/III family), ~2.00 Ghz
      (timed at roughly 1.98 Ghz)
@@ -110,7 +110,6 @@ Loading compiled script C:/Users/DELL/Desktop/gdemo/TravelGame/Bin/common/gameSc
 FunCode (v1.7.5) initialized...
 Loading compiled script C:/Users/DELL/Desktop/gdemo/TravelGame/Bin/game/managed/datablocks.cs.
 Loading compiled script C:/Users/DELL/Desktop/gdemo/TravelGame/Bin/game/managed/persistent.cs.
-Compiling C:/Users/DELL/Desktop/gdemo/TravelGame/Bin/game/managed/brushes.cs...
 Loading compiled script C:/Users/DELL/Desktop/gdemo/TravelGame/Bin/game/managed/brushes.cs.
 Loading compiled script C:/Users/DELL/Desktop/gdemo/TravelGame/Bin/game/gui/mainScreen.gui.
 Loading compiled script C:/Users/DELL/Desktop/gdemo/TravelGame/Bin/game/gameScripts/game.cs.

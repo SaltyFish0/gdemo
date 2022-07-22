@@ -29,3 +29,8 @@
 1433848234 c:\users\dell\desktop\gdemo\travelgame\sourcecode\header\lessonx.h
 	<Windows.h>
 
+1658496357 source:c:\users\dell\desktop\gdemo\travelgame\sourcecode\src\main.cpp
+	"CommonAPI.h"
+	"LessonX.h"
+	<stdio.h>
+

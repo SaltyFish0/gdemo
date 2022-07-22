@@ -3,27 +3,40 @@
 //-----------------------------------------------------------------------------
 #include "CommonAPI.h"
 #include "LessonX.h"
-
+#include <stdio.h>
 ///////////////////////////////////////////////////////////////////////////////////////////
 //
 // 主函数入口
 //
 //////////////////////////////////////////////////////////////////////////////////////////
-int PASCAL WinMain(HINSTANCE hInstance,
-                   HINSTANCE hPrevInstance,
-                   LPSTR     lpCmdLine,
-                   int       nCmdShow)
+//屏幕边界
+float g_fScreenLeft = 0.f; // 屏幕左边界值
+float g_fScreenRight = 0.f; // 右
+float g_fScreenTop = 0.f; // 上
+float g_fScreenBottom = 0.f; // 下
+
+
 float g_fSpeedLeft = 0.f; // 左方向速度
 float g_fSpeedRight = 0.f; // 右
 float g_fSpeedTop = 0.f; // 上
 float g_fSpeedBottom = 0.f; // 下
+
+int PASCAL WinMain(HINSTANCE hInstance,
+                   HINSTANCE hPrevInstance,
+                   LPSTR     lpCmdLine,
+                   int       nCmdShow)
+
+
 {
 	// 初始化游戏引擎
 	if( !dInitGameEngine( hInstance, lpCmdLine ) )
 		return 0;
+
+    g_fScreenLeft = dGetScreenLeft();
+    g_fScreenRight = dGetScreenRight();
+    g_fScreenTop = dGetScreenTop();
+    g_fScreenBottom = dGetScreenBottom();
     dSetSpriteWorldLimit("role", WORLD_LIMIT_NULL, g_fScreenLeft, g_fScreenTop, g_fScreenRight, g_fScreenBottom);
-
-
 
 	// To do : 在此使用API更改窗口标题
 	dSetWindowTitle("Lesson");
@@ -33,9 +46,13 @@ float g_fSpeedBottom = 0.f; // 下
 	{
 		// 获取两次调用之间的时间差，传递给游戏逻辑处理
 		float	fTimeDelta	=	dGetTimeDelta();
-
 		// 执行游戏主循环
 		GameMainLoop( fTimeDelta );
+        float a = dGetSpritePositionX("role");
+        if(a > 46)
+        {
+          dLoadMap("untitled.t2d");
+        }
 	};
 
 	// 关闭游戏引擎
@@ -64,8 +81,16 @@ void dOnMouseClick( const int iMouseType, const float fMouseX, const float fMous
     // 界面开始开始游戏
     if(iMouseType==0 && dIsPointInSprite("begin",fMouseX,fMouseY))
     {
-        dLoadMap("untitled.t2d");
+        dSetSpriteLinearVelocity("role",20,0);
+        float a = dGetSpritePositionX("role");
+        printf("ff=%lf=\n",a);
+        printf("Hello World!\n");
+
+        //dGetSpritePosit
+        //dLoadMap("untitled.t2d");
     }
+
+
 	// 可以在此添加游戏需要的响应函数
 	OnMouseClick(iMouseType, fMouseX, fMouseY);
 
@@ -93,24 +118,6 @@ void dOnKeyDown( const int iKey, const int iAltPress, const int iShiftPress, con
 	// 可以在此添加游戏需要的响应函数
 
 	OnKeyDown(iKey, iAltPress, iShiftPress, iCtrlPress);
-	switch(iKey)
-    {
-        case KEY_W:
-            g_fSpeedTop = -40.f;
-            break;
-        case KEY_A:
-            g_fSpeedLeft = -60.f;
-            break;
-        case KEY_S:
-            g_fSpeedBottom = 40.f;
-            break;
-        case KEY_D:
-            g_fSpeedRight = 60.f;
-            break;
-        default:
-            break;
-
-    }
 }
 //==========================================================================
 //
@@ -145,6 +152,10 @@ void dOnSpriteColSprite( const char *szSrcName, const char *szTarName )
 //
 void dOnSpriteColWorldLimit( const char *szName, const int iColSide )
 {
+     if(strcmp(szName, "role") == 0){
+                dSetSpriteLinearVelocity(szName,0,0);
+                return;
+    }
 	// 可以在此添加游戏需要的响应函数
 	OnSpriteColWorldLimit(szName, iColSide);
 }

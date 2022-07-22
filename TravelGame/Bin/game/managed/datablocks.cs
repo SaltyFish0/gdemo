@@ -122,7 +122,7 @@ $managedDatablockSet = new SimSet() {
       allowUnload = "0";
       force16Bit = "0";
    };
-   new t2dImageMapDatablock(xiaoyaoImageMap1) {
+   new t2dImageMapDatablock(xiaoyaoImageMap11) {
       imageName = "~/data/images/xiaoyao.png";
       imageMode = "CELL";
       frameCount = "-1";
@@ -141,46 +141,6 @@ $managedDatablockSet = new SimSet() {
       preload = "0";
       allowUnload = "0";
       force16Bit = "0";
-   };
-   new t2dAnimationDatablock(xia) {
-      imageMap = "xiaoyaoImageMap1";
-      animationFrames = "0 1 2 3 3";
-      animationTime = "0.333333";
-      animationCycle = "1";
-      randomStart = "1";
-      startFrame = "0";
-      animationPingPong = "0";
-      animationReverse = "0";
-   };
-   new t2dAnimationDatablock(zuo) {
-      imageMap = "xiaoyaoImageMap1";
-      animationFrames = "5 6 7 7";
-      animationTime = "0.285714";
-      animationCycle = "1";
-      randomStart = "0";
-      startFrame = "0";
-      animationPingPong = "0";
-      animationReverse = "0";
-   };
-   new t2dAnimationDatablock(you) {
-      imageMap = "xiaoyaoImageMap1";
-      animationFrames = "8 9 10 11";
-      animationTime = "0.285714";
-      animationCycle = "1";
-      randomStart = "0";
-      startFrame = "0";
-      animationPingPong = "0";
-      animationReverse = "0";
-   };
-   new t2dAnimationDatablock(shang) {
-      imageMap = "xiaoyaoImageMap1";
-      animationFrames = "12 13 14 15";
-      animationTime = "0.266667";
-      animationCycle = "1";
-      randomStart = "0";
-      startFrame = "0";
-      animationPingPong = "0";
-      animationReverse = "0";
    };
    new t2dImageMapDatablock(backgroundImageMap) {
       imageName = "~/data/images/background.png";
@@ -201,5 +161,15 @@ $managedDatablockSet = new SimSet() {
       preload = "1";
       allowUnload = "0";
       force16Bit = "0";
+   };
+   new t2dAnimationDatablock(xiaoyaoAnimation) {
+      imageMap = "xiaoyaoImageMap11";
+      animationFrames = "8 9 10 11";
+      animationTime = "0.266667";
+      animationCycle = "1";
+      randomStart = "0";
+      startFrame = "0";
+      animationPingPong = "0";
+      animationReverse = "0";
    };
 };
