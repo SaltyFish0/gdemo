@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1420212242 source:e:\y杨女士de作业\games\big\saltyfish\sourcecode\icon.rc
+
+1433848136 source:e:\y杨女士de作业\games\big\saltyfish\sourcecode\src\lessonx.cpp
+	<Stdio.h>
+	"CommonAPI.h"
+	"LessonX.h"
+
+1461256728 e:\y杨女士de作业\games\big\saltyfish\sourcecode\header\commonapi.h
+	<windows.h>
+
+1433848234 e:\y杨女士de作业\games\big\saltyfish\sourcecode\header\lessonx.h
+	<Windows.h>
+
+1658472634 source:e:\y杨女士de作业\games\big\saltyfish\sourcecode\src\main.cpp
+	"CommonAPI.h"
+	"LessonX.h"
+
