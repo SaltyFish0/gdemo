@@ -36,10 +36,12 @@
 
 1658497149 source:c:\users\13608\desktop\funcodewin10\games\funcode\travelgame\sourcecode\icon.rc
 
-1658497149 source:c:\users\13608\desktop\funcodewin10\games\funcode\travelgame\sourcecode\src\lessonx.cpp
+1658504711 source:c:\users\13608\desktop\funcodewin10\games\funcode\travelgame\sourcecode\src\lessonx.cpp
 	<Stdio.h>
 	"CommonAPI.h"
 	"LessonX.h"
+	<windows.h>
+	<mmsystem.h>
 
 1658497149 c:\users\13608\desktop\funcodewin10\games\funcode\travelgame\sourcecode\header\commonapi.h
 	<windows.h>
@@ -47,8 +49,9 @@
 1658497149 c:\users\13608\desktop\funcodewin10\games\funcode\travelgame\sourcecode\header\lessonx.h
 	<Windows.h>
 
-1658500974 source:c:\users\13608\desktop\funcodewin10\games\funcode\travelgame\sourcecode\src\main.cpp
+1658512649 source:c:\users\13608\desktop\funcodewin10\games\funcode\travelgame\sourcecode\src\main.cpp
 	"CommonAPI.h"
 	"LessonX.h"
+	<direct.h>
 	<stdio.h>
 
