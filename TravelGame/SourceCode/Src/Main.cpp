@@ -13,10 +13,17 @@ int PASCAL WinMain(HINSTANCE hInstance,
                    HINSTANCE hPrevInstance,
                    LPSTR     lpCmdLine,
                    int       nCmdShow)
+float g_fSpeedLeft = 0.f; // 左方向速度
+float g_fSpeedRight = 0.f; // 右
+float g_fSpeedTop = 0.f; // 上
+float g_fSpeedBottom = 0.f; // 下
 {
 	// 初始化游戏引擎
 	if( !dInitGameEngine( hInstance, lpCmdLine ) )
 		return 0;
+    dSetSpriteWorldLimit("role", WORLD_LIMIT_NULL, g_fScreenLeft, g_fScreenTop, g_fScreenRight, g_fScreenBottom);
+
+
 
 	// To do : 在此使用API更改窗口标题
 	dSetWindowTitle("Lesson");
@@ -84,7 +91,26 @@ void dOnMouseUp( const int iMouseType, const float fMouseX, const float fMouseY 
 void dOnKeyDown( const int iKey, const int iAltPress, const int iShiftPress, const int iCtrlPress )
 {
 	// 可以在此添加游戏需要的响应函数
+
 	OnKeyDown(iKey, iAltPress, iShiftPress, iCtrlPress);
+	switch(iKey)
+    {
+        case KEY_W:
+            g_fSpeedTop = -40.f;
+            break;
+        case KEY_A:
+            g_fSpeedLeft = -60.f;
+            break;
+        case KEY_S:
+            g_fSpeedBottom = 40.f;
+            break;
+        case KEY_D:
+            g_fSpeedRight = 60.f;
+            break;
+        default:
+            break;
+
+    }
 }
 //==========================================================================
 //
