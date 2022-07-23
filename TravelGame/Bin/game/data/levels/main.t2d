@@ -38,17 +38,23 @@
       cameraSize = "100 75";
 
    new t2dStaticSprite() {
-      imageMap = "RImageMap";
+      imageMap = "mapImageMap";
       frame = "0";
       useSourceRect = "0";
       sourceRect = "2.37252e-039 0 2.37252e-039 6.22914e-039";
       canSaveDynamicFields = "1";
+<<<<<<< HEAD
       Position = "0.000 -0.089";
       size = "100.000 74.823";
+=======
+      Position = "-0.000 0.025";
+      size = "100.000 75.050";
+>>>>>>> 41e8e7d4566ee523909e67732349911ed9d19bfa
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "50.000 37.500";
          mountID = "2";
    };
+<<<<<<< HEAD
    new t2dStaticSprite(sf) {
       imageMap = "GolfBallImageMap";
       frame = "0";
@@ -57,8 +63,31 @@
       canSaveDynamicFields = "1";
       Position = "6.243 -16.243";
       size = "2.486 2.486";
+=======
+   new t2dStaticSprite(musicPower) {
+      imageMap = "puzzlesymbol_noteImageMap";
+      frame = "0";
+      useSourceRect = "0";
+      sourceRect = "0 0 0 0";
+      canSaveDynamicFields = "1";
+      Position = "45.854 -33.175";
+      size = "4.000 4.000";
+>>>>>>> 41e8e7d4566ee523909e67732349911ed9d19bfa
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "50.000 37.500";
          mountID = "3";
    };
+<<<<<<< HEAD
+=======
+   new t2dTrigger(anchor_sy_btn) {
+      canSaveDynamicFields = "1";
+      Position = "9.327 -16.443";
+      size = "6.651 2.887";
+      WorldLimitMin = "-50.000 -37.500";
+      WorldLimitMax = "50.000 37.500";
+      CollisionActiveSend = "1";
+      CollisionActiveReceive = "1";
+         mountID = "4";
+   };
+>>>>>>> 41e8e7d4566ee523909e67732349911ed9d19bfa
 };

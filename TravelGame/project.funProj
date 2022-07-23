@@ -4,7 +4,11 @@
    <Version>v1.7.5</Version>
    <MinVersion>v1.1.4</MinVersion>
    <Creator>Torque Game Builder</Creator>
+<<<<<<< HEAD
    <LastLevel>Bin/game/data/levels/main.t2d</LastLevel>
+=======
+   <LastLevel>Bin/game/data/levels/mapJcsyl.t2d</LastLevel>
+>>>>>>> 41e8e7d4566ee523909e67732349911ed9d19bfa
    <ProjectName>SaltyFish</ProjectName>
    <ProjectType>C</ProjectType>
    <JavaDevVersion>JCreator</JavaDevVersion>
