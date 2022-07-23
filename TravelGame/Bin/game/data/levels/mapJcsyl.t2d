@@ -38,13 +38,13 @@
       cameraSize = "100 75";
 
    new t2dStaticSprite() {
-      imageMap = "GolfBackground2ImageMap";
+      imageMap = "jcsylImageMap";
       frame = "0";
       useSourceRect = "0";
       sourceRect = "0 0 0 0";
       canSaveDynamicFields = "1";
-      Position = "-0.188 -0.393";
-      size = "100.375 74.214";
+      Position = "-0.000 0.157";
+      size = "100.000 75.313";
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "50.000 37.500";
          mountID = "2";
