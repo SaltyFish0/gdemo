@@ -41,12 +41,24 @@
       imageMap = "RImageMap";
       frame = "0";
       useSourceRect = "0";
-      sourceRect = "0 0 0 0";
+      sourceRect = "2.37252e-039 0 2.37252e-039 6.22914e-039";
       canSaveDynamicFields = "1";
-      Position = "-0.000 -0.089";
+      Position = "0.000 -0.089";
       size = "100.000 74.823";
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "50.000 37.500";
          mountID = "2";
+   };
+   new t2dStaticSprite(sf) {
+      imageMap = "GolfBallImageMap";
+      frame = "0";
+      useSourceRect = "0";
+      sourceRect = "0 0 2.37252e-039 6.22914e-039";
+      canSaveDynamicFields = "1";
+      Position = "6.243 -16.243";
+      size = "2.486 2.486";
+      WorldLimitMin = "-50.000 -37.500";
+      WorldLimitMax = "50.000 37.500";
+         mountID = "3";
    };
 };

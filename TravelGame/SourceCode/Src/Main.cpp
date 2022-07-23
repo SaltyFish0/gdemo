@@ -111,6 +111,11 @@ void dOnMouseClick( const int iMouseType, const float fMouseX, const float fMous
 
     }
 
+    if(iMouseType == 0 && dIsPointInSprite("sf",fMouseX,fMouseY))
+    {
+        dLoadMap("untitled.t2d");
+    }
+
 	// 可以在此添加游戏需要的响应函数
 	OnMouseClick(iMouseType, fMouseX, fMouseY);
 
