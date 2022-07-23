@@ -22,7 +22,11 @@ float g_fSpeedRight = 0.f; // 右
 float g_fSpeedTop = 0.f; // 上
 float g_fSpeedBottom = 0.f; // 下
 
-bool y_loadMapflag = false; // 切换地图
+
+// 切换地图
+bool mainMapFlag = false;
+bool jcsylMapFlag = false;
+
 bool y_musicPower = true; // 音乐开关
 
 int PASCAL WinMain(HINSTANCE hInstance,
@@ -59,13 +63,13 @@ int PASCAL WinMain(HINSTANCE hInstance,
 		GameMainLoop( fTimeDelta );
 
         // 切换地图
-        if(y_loadMapflag){
+        if(mainMapFlag){
             dLoadMap("main.t2d");
         }
 
 	};
 
-	// 关闭游戏引擎
+	// 关闭游戏引擎anchor_sy_btn
 	dShutdownGameEngine();
 	return 0;
 }
@@ -88,10 +92,14 @@ void dOnMouseMove( const float fMouseX, const float fMouseY )
 //
 void dOnMouseClick( const int iMouseType, const float fMouseX, const float fMouseY )
 {
+
+    // 可以在此添加游戏需要的响应函数
+	OnMouseClick(iMouseType, fMouseX, fMouseY);
+
     // 界面开始开始游戏
     if(iMouseType == 0 && dIsPointInSprite("begin",fMouseX,fMouseY))
     {
-        dSetSpriteLinearVelocity("role",20,0);
+        dSetSpriteLinearVelocity("role",30,0);
         printf("Hello World!\n");
     }
     // 音乐按钮 控制播放音乐
@@ -110,9 +118,11 @@ void dOnMouseClick( const int iMouseType, const float fMouseX, const float fMous
         y_musicPower = !y_musicPower;
 
     }
-
-	// 可以在此添加游戏需要的响应函数
-	OnMouseClick(iMouseType, fMouseX, fMouseY);
+    // 基础实验楼 anchor
+    if(iMouseType == 0 && dIsPointInSprite("anchor_sy_btn",fMouseX,fMouseY)){
+        printf("基础实验楼——map\n");
+        dLoadMap("mapJcsyl.t2d");
+    }
 
 }
 //==========================================================================
@@ -175,9 +185,10 @@ void dOnSpriteColWorldLimit( const char *szName, const int iColSide )
 	OnSpriteColWorldLimit(szName, iColSide);
 
 	//判断是否到达世界边界
+	printf("i", iColSide);
 	if (!strcmp(szName, "role"))
     {
-        y_loadMapflag = true;
+        mainMapFlag = true;
     }
 
 }

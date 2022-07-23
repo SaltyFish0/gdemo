@@ -49,9 +49,8 @@
 1658497149 c:\users\13608\desktop\funcodewin10\games\funcode\travelgame\sourcecode\header\lessonx.h
 	<Windows.h>
 
-1658512649 source:c:\users\13608\desktop\funcodewin10\games\funcode\travelgame\sourcecode\src\main.cpp
+1658560944 source:c:\users\13608\desktop\funcodewin10\games\funcode\travelgame\sourcecode\src\main.cpp
 	"CommonAPI.h"
 	"LessonX.h"
-	<direct.h>
 	<stdio.h>
 
