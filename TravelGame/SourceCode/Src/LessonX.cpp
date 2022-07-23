@@ -7,6 +7,10 @@
 #include <Stdio.h>
 #include "CommonAPI.h"
 #include "LessonX.h"
+
+#include<windows.h>
+#include<mmsystem.h>
+#pragma comment(lib,"Winmm.lib")
 ////////////////////////////////////////////////////////////////////////////////
 //
 //
@@ -24,7 +28,7 @@ void		GameEnd();
 //==============================================================================
 //
 // 游戏主循环，此函数将被不停的调用，引擎每刷新一次屏幕，此函数即被调用一次
-// 用以处理游戏的开始、进行中、结束等各种状态. 
+// 用以处理游戏的开始、进行中、结束等各种状态.
 // 函数参数fDeltaTime : 上次调用本函数到此次调用本函数的时间间隔，单位：秒
 void GameMainLoop( float	fDeltaTime )
 {
@@ -86,7 +90,7 @@ void GameEnd()
 // 参数 fMouseX, fMouseY：为鼠标当前坐标
 void OnMouseMove( const float fMouseX, const float fMouseY )
 {
-	
+
 }
 //==========================================================================
 //
@@ -95,7 +99,7 @@ void OnMouseMove( const float fMouseX, const float fMouseY )
 // 参数 fMouseX, fMouseY：为鼠标当前坐标
 void OnMouseClick( const int iMouseType, const float fMouseX, const float fMouseY )
 {
-	
+
 }
 //==========================================================================
 //
@@ -104,7 +108,7 @@ void OnMouseClick( const int iMouseType, const float fMouseX, const float fMouse
 // 参数 fMouseX, fMouseY：为鼠标当前坐标
 void OnMouseUp( const int iMouseType, const float fMouseX, const float fMouseY )
 {
-	
+
 }
 //==========================================================================
 //
@@ -112,7 +116,7 @@ void OnMouseUp( const int iMouseType, const float fMouseX, const float fMouseY )
 // 参数 iKey：被按下的键，值见 enum KeyCodes 宏定义
 // 参数 iAltPress, iShiftPress，iCtrlPress：键盘上的功能键Alt，Ctrl，Shift当前是否也处于按下状态(0未按下，1按下)
 void OnKeyDown( const int iKey, const bool bAltPress, const bool bShiftPress, const bool bCtrlPress )
-{	
+{
 
 }
 //==========================================================================
@@ -121,7 +125,7 @@ void OnKeyDown( const int iKey, const bool bAltPress, const bool bShiftPress, co
 // 参数 iKey：弹起的键，值见 enum KeyCodes 宏定义
 void OnKeyUp( const int iKey )
 {
-	
+
 }
 //===========================================================================
 //
@@ -130,7 +134,7 @@ void OnKeyUp( const int iKey )
 // 参数 szTarName：被碰撞的精灵名字
 void OnSpriteColSprite( const char *szSrcName, const char *szTarName )
 {
-	
+
 }
 //===========================================================================
 //
@@ -139,5 +143,5 @@ void OnSpriteColSprite( const char *szSrcName, const char *szTarName )
 // 参数 iColSide：碰撞到的边界 0 左边，1 右边，2 上边，3 下边
 void OnSpriteColWorldLimit( const char *szName, const int iColSide )
 {
-	
+
 }

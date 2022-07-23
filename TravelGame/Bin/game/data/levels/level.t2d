@@ -41,7 +41,7 @@
       imageMap = "backgroundImageMap";
       frame = "0";
       useSourceRect = "0";
-      sourceRect = "2.36005e-039 0 2.36005e-039 6.22914e-039";
+      sourceRect = "2.36006e-039 0 2.37252e-039 6.22914e-039";
       canSaveDynamicFields = "1";
       Position = "0.000 0.062";
       size = "100.000 75.124";
@@ -53,9 +53,9 @@
    new t2dScroller(begin) {
       imageMap = "GolfExitImageMap";
       useSourceRect = "0";
-      sourceRect = "2.36005e-039 0 2.36005e-039 6.20699e-039";
+      sourceRect = "2.36006e-039 0 2.37252e-039 6.20699e-039";
       canSaveDynamicFields = "1";
-      Position = "0.758 -6.926";
+      Position = "1.000 -4.000";
       size = "8.000 8.000";
       WorldLimitMin = "-50.000 -37.500";
       WorldLimitMax = "50.000 37.500";
@@ -75,7 +75,19 @@
       Position = "-45.059 30.750";
       size = "7.500 13.500";
       WorldLimitMin = "-50.000 -37.500";
-      WorldLimitMax = "50.000 37.500";
+      WorldLimitMax = "50.000 37.847";
          mountID = "5";
+   };
+   new t2dStaticSprite(musicPower) {
+      imageMap = "puzzlesymbol_noteImageMap";
+      frame = "0";
+      useSourceRect = "0";
+      sourceRect = "0 0 0 0";
+      canSaveDynamicFields = "1";
+      Position = "45.318 -33.000";
+      size = "4.000 4.000";
+      WorldLimitMin = "-50.000 -37.500";
+      WorldLimitMax = "50.000 37.500";
+         mountID = "6";
    };
 };

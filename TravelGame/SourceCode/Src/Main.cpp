@@ -4,6 +4,7 @@
 #include "CommonAPI.h"
 #include "LessonX.h"
 #include <stdio.h>
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 //
 // 主函数入口
@@ -20,6 +21,9 @@ float g_fSpeedLeft = 0.f; // 左方向速度
 float g_fSpeedRight = 0.f; // 右
 float g_fSpeedTop = 0.f; // 上
 float g_fSpeedBottom = 0.f; // 下
+
+bool y_loadMapflag = false; // 切换地图
+bool y_musicPower = true; // 音乐开关
 
 int PASCAL WinMain(HINSTANCE hInstance,
                    HINSTANCE hPrevInstance,
@@ -40,7 +44,12 @@ int PASCAL WinMain(HINSTANCE hInstance,
 
 	// To do : 在此使用API更改窗口标题
 	dSetWindowTitle("Lesson");
-
+	// 加载音乐
+	mciSendString(TEXT("open ../SourceCode/resources/music.wav Alias music"),NULL,NULL, NULL);
+	mciSendString(TEXT("play music"),NULL,NULL, NULL);
+    // 音乐按钮旋转
+    dSetSpriteAutoRot("musicPower", 360);
+    dResizeWindow(1280, 1024);
 	// 引擎主循环，处理屏幕图像刷新等工作
 	while( dEngineMainLoop() )
 	{
@@ -48,11 +57,12 @@ int PASCAL WinMain(HINSTANCE hInstance,
 		float	fTimeDelta	=	dGetTimeDelta();
 		// 执行游戏主循环
 		GameMainLoop( fTimeDelta );
-        float a = dGetSpritePositionX("role");
-        if(a > 46)
-        {
-          dLoadMap("untitled.t2d");
+
+        // 切换地图
+        if(y_loadMapflag){
+            dLoadMap("main.t2d");
         }
+
 	};
 
 	// 关闭游戏引擎
@@ -79,17 +89,27 @@ void dOnMouseMove( const float fMouseX, const float fMouseY )
 void dOnMouseClick( const int iMouseType, const float fMouseX, const float fMouseY )
 {
     // 界面开始开始游戏
-    if(iMouseType==0 && dIsPointInSprite("begin",fMouseX,fMouseY))
+    if(iMouseType == 0 && dIsPointInSprite("begin",fMouseX,fMouseY))
     {
         dSetSpriteLinearVelocity("role",20,0);
-        float a = dGetSpritePositionX("role");
-        printf("ff=%lf=\n",a);
         printf("Hello World!\n");
-
-        //dGetSpritePosit
-        //dLoadMap("untitled.t2d");
     }
+    // 音乐按钮 控制播放音乐
+    if(iMouseType == 0 && dIsPointInSprite("musicPower",fMouseX,fMouseY))
+    {
+        if(y_musicPower)
+        {
+            // 停止旋转,暂停音乐
+            dSetSpriteAutoRot("musicPower", 0);
+            mciSendString(TEXT("pause music"),NULL,NULL, NULL);
+        }else{
+            // 旋转... 继续音乐
+            dSetSpriteAutoRot("musicPower", 360);
+            mciSendString(TEXT("resume music"),NULL,NULL, NULL);
+        }
+        y_musicPower = !y_musicPower;
 
+    }
 
 	// 可以在此添加游戏需要的响应函数
 	OnMouseClick(iMouseType, fMouseX, fMouseY);
@@ -105,7 +125,6 @@ void dOnMouseUp( const int iMouseType, const float fMouseX, const float fMouseY 
 {
 	// 可以在此添加游戏需要的响应函数
 	OnMouseUp(iMouseType, fMouseX, fMouseY);
-
 }
 //==========================================================================
 //
@@ -152,11 +171,14 @@ void dOnSpriteColSprite( const char *szSrcName, const char *szTarName )
 //
 void dOnSpriteColWorldLimit( const char *szName, const int iColSide )
 {
-     if(strcmp(szName, "role") == 0){
-                dSetSpriteLinearVelocity(szName,0,0);
-                return;
-    }
 	// 可以在此添加游戏需要的响应函数
 	OnSpriteColWorldLimit(szName, iColSide);
+
+	//判断是否到达世界边界
+	if (!strcmp(szName, "role"))
+    {
+        y_loadMapflag = true;
+    }
+
 }
 
